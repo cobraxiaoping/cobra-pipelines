@@ -7,6 +7,13 @@ pipeline {
       }
     }
 
+    stage('Build') {
+      steps {
+        tool 'apache-maven-3.6.1'
+        sh 'mvn -v'
+      }
+    }
+
   }
   environment {
     COMPLETED_MSG = 'build node'
